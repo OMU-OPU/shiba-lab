@@ -1,0 +1,19 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.omu.ac.jp	TRUE	/	FALSE	1999999999	BIGipServerWQzLQ3SipcELzAdlY1jVgw	!SRVUQlFzdiO+igE1+9hoCkeDwXsH4QqyK09wzNBJinpjE6udY3Tam/5t3yIMERDa5M7dxKZg/M0ZB1c=
+www.marine.osakafu-u.ac.jp	TRUE	/	FALSE	1999999999	BIGipServer6jgowkhQdtxQQky3ixtbag	!udt56cL9/yAHiMk1+9hoCkeDwXsH4QSk67COa67x2ecRVadTcQYD6bmr+bDNp4IibyAx7Zxb0UpJTQ==
+.twitter.com	TRUE	/	FALSE	1999999999	guest_id_marketing	v1%3A178123113105217128
+.twitter.com	TRUE	/	FALSE	1999999999	guest_id_ads	v1%3A178123113105217128
+.twitter.com	TRUE	/	FALSE	1999999999	personalization_id	v1_+9f1tsgAAIEes8XCDpv21A=="
+.twitter.com	TRUE	/	FALSE	1999999999	guest_id	v1%3A178123113105217128
+twitter.com	TRUE	/	FALSE	1999999999	__cf_bm	kmjjbR2ADMmnQVEEWxw7h7TqiGJqy8IMKWoxLP9PKXA-1781231130.9971087-1.0.1.1-CDaObClRrmpS._lo03A2I7kD75UfcnifL8pYWAF.winNfLhxpI8Z0qAwdFCafGHtfN1g54dNzDSK1QWiLetf9WFVt5hg1dIDaZ4zuI2BmiD5KhocDJhTTiiS0d6WThsU
+twitter.com	TRUE	/	FALSE	1999999999	SameSite	None
+michitake.osakafu-u.ac.jp	TRUE	/	FALSE	1999999999	PHPSESSID	1k8ph1v39tc13mhditbbrs2lnu
+michitake.osakafu-u.ac.jp	TRUE	/	FALSE	1999999999	BIGipServerHAKKcmeYmQTCqNw2ZH+G9A	!VIR21YMNwu7SHxQ1+9hoCkeDwXsH4f0+fyrGLInZv+6hBCQ17pUvdMhPJHZM2yOUEu72OvcwYfAIXw==
+michitake.osakafu-u.ac.jp	TRUE	/	FALSE	1999999999	TS019783c4	01d50bebd75ee048048e6f9ea76b9a3e322b260886b0996ec26e8e9c781246aaa19eaa4b991dda71a28e3f13d95df4d79842128bd15fd7bbb29bb4f49f441f682fe1382be7
+michitake.osakafu-u.ac.jp	TRUE	/	FALSE	1999999999	TS01873eb9	01d50bebd7b60ae2ef94115c923f33f1c129875e60b0996ec26e8e9c781246aaa19eaa4b99c2a3ca48b1bc5452c927f97fd53123fe9cd941052b2b6a0d4372ec6ae2d2003d
+www.marine.osakafu-u.ac.jp	TRUE	/	FALSE	1999999999	TS01c3c6a4	01d50bebd7b3c5cd6942f5d0a621312af0089630ac4294414800e1af8f66c9801e3e69e5a97e27f6619597afa78ff006db8ab55dc6faf7dfc894e4e2010ef49d37c2d9b433
+social-plugins.line.me	TRUE	/	FALSE	1999999999	spvc	r0DEuuQjW8aUxOLlfvhRbO320U2ukHIJ5a5SGEIZr4Q4OoalsQeIjx9lQIYco3A4P824ensEyHI
+social-plugins.line.me	TRUE	/	FALSE	1999999999	SameSite	None
+www.omu.ac.jp	TRUE	/	FALSE	1999999999	TS0114069c	01d50bebd73eeea5561aab2336f45d7419289fc101160ca6006911a1a0830bcba09d86831aecf6823d06365c6ed80bfb89cbc0083f4318c90dd56917e5883e6f927cb046cf
+
