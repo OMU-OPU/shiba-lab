@@ -1,0 +1,26 @@
+media:
+  folder: images/uploads # 画像がアップロードされる場所
+collections:
+  - name: site_data
+    label: サイト更新
+    files:
+      - name: news
+        label: お知らせ管理
+        file: data/news.json
+        fields:
+          - name: articles
+            label: 記事一覧
+            type: list
+            fields:
+              - name: title
+                label: タイトル
+                type: string
+              - name: date
+                label: 日付
+                type: datetime
+              - name: image
+                label: 画像（任意）
+                type: image
+              - name: body
+                label: 本文
+                type: text
