@@ -45,65 +45,13 @@
   
   <script src="../../www.omu.ac.jp/powercmsx/themes/small_site/js/jquery.min.js"></script>
   
-<script>
-  var ga_optin_show = true;
-  var ga_key = "UA-195161857-2";
-  var ga_disable_key = "ga-disable-" + ga_key;
-  var ga4_key = "G-5756VLRSV6";
-  var ga4_disable_key = "ga-disable-" + ga4_key;
-  var cookie_save_path = "../../index.html";
-
-  // get opt-in cookie
-  function read_cookie(name) {
-    var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-    result && (result = result[1]);
-    return result;
-  }
-
-  // get opt-in cookie
-  var optin_val = read_cookie("ga_cookie_opt_in");
-  if (optin_val === "yes") {
-    console.log("[opt-in] true");
-    window[ga_disable_key] = false;
-    window[ga4_disable_key] = false;
-    
-    window["ga-disable-G-D2QGVPRPN9"] = false;
-    
-  } else {
-    console.log("[opt-in] false");
-    window[ga_disable_key] = true;
-    window[ga4_disable_key] = true;
-    
-    window["ga-disable-G-D2QGVPRPN9"] = true;
-    
-  }
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function (w, d, s, l, i) {
-    w[l] = w[l] || []; w[l].push({
-      'gtm.start':
-        new Date().getTime(), event: 'gtm.js'
-    }); var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-        '../../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
-  })(window, document, 'script', 'dataLayer', 'GTM-MG7M58S');</script>
-<!-- End Google Tag Manager -->
 
 
 
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D2QGVPRPN9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-D2QGVPRPN9');
-</script>
-<!-- End Global site tag (gtag.js) - Google Analytics -->
+
 
 
 
@@ -116,7 +64,6 @@
   
     
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG7M58S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 
@@ -759,25 +706,6 @@
     </div>
   </main>
   
-<div class="cookie pbox pbox_clr_light fixed-bottom" id="optin-box">
-	<div class="pblock mb-0 pt-10 pb-10">
-		<div class="d-md-flex align-items-center">
-			<div class="w-md-75">
-				<p class="fz__small mb-sp-20">当サイトではサイトの利用状況を把握するためにGoogle Analyticsを利用しています。Google Analyticsは、<br class="d-sp-none">クッキーを利用して利用者の情報を収集します。<a class="plink plink_type_underline" href="https://www.omu.ac.jp/cookiepolicy/">クッキーポリシーを確認</a></p>
-			</div>
-			<div class="w-md-25">
-				<div class="row row-cols-2 gutters-20 fz__small">
-					<div class="col">
-						<a class="cookie__link plink plink_type_box plink_type_box_slim" href="#" id="ga-opt-in-false">同意しない</a>
-					</div>
-					<div class="col">
-						<a class="cookie__link plink plink_type_box plink_type_box_slim plink_type_box_black" href="#" id="ga-opt-in-true">同意する</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 
   
 <footer class="ft">
