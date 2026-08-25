@@ -39,10 +39,12 @@ def render(rel, cur):
     main = cur[ms.start():me.end()]
     depth = len(posixpath.dirname(rel).split('/')) if posixpath.dirname(rel) else 0
     robots = re.search(r'<meta name="robots"[^>]*>\s*', cur)
+    thumb = re.search(r'<meta name="thumbnail"[^>]*>\s*', cur)
     body_tag = 'h1' if re.search(r'<h1 class="g-nav__medium_site">', cur) else 'div'
     out = TPL
     out = out.replace('{{MAIN}}', main)
     out = out.replace('{{ROBOTS}}', robots.group(0) if robots else '')
+    out = out.replace('{{THUMBNAIL}}', thumb.group(0) if thumb else '')
     out = out.replace('{{SITE_TAG}}', body_tag)
     out = out.replace('{{TITLE}}',     grab(r'<title>(.*?)</title>', cur))
     out = out.replace('{{OG_URL}}',    grab(r'<meta property="og:url" content="([^"]*)">', cur))
