@@ -1,0 +1,51 @@
+name: サイトの自動生成
+
+# お知らせ記事を追加して push すると、一覧ページを自動で作り直す。
+# _frame/frame.html を直した場合は、全ページの枠も貼り直す。
+# 編集する人が手元で Python を実行する必要をなくすための仕組み。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'info/news/entry-*.html'
+      - '_frame/frame.html'
+      - 'build.py'
+      - 'build_news.py'
+  workflow_dispatch:        # 手動でも実行できるようにしておく
+
+permissions:
+  contents: write
+
+concurrency:                # 続けて push されたときに衝突させない
+  group: site-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 共通の枠を全ページへ適用
+        run: python build.py --apply
+
+      - name: お知らせ一覧を作り直す
+        run: python build_news.py --apply
+
+      - name: 変更があれば記録して反映
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "更新の必要はありませんでした。"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Rebuild the listings and page frames from the sources"
+          git push
+          echo "更新して反映しました。"
