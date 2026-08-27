@@ -1,26 +1,42 @@
-media:
-  folder: images/uploads # 画像がアップロードされる場所
-collections:
-  - name: site_data
-    label: サイト更新
-    files:
-      - name: news
-        label: お知らせ管理
-        file: data/news.json
-        fields:
-          - name: articles
-            label: 記事一覧
-            type: list
-            fields:
-              - name: title
-                label: タイトル
-                type: string
-              - name: date
-                label: 日付
-                type: datetime
-              - name: image
-                label: 画像（任意）
-                type: image
-              - name: body
-                label: 本文
-                type: text
+# Pages CMS の設定。ブラウザ上の入力画面がこの定義どおりに作られる。
+# https://app.pagescms.org からこのリポジトリを開くと編集できる。
+#
+# ここで書いたお知らせは content/news/ に保存され、
+# Push 時に GitHub 側で記事ページと一覧が自動生成される（.github/workflows/build.yml）。
+
+media: assets/uploads
+
+content:
+  - name: news
+    label: お知らせ
+    type: collection
+    path: content/news
+    view:
+      fields: [title, date, tags]
+    fields:
+      - name: title
+        label: タイトル
+        type: string
+        required: true
+        description: 一覧と記事の見出しに使われます。
+
+      - name: date
+        label: 日付
+        type: date
+        required: true
+        description: 掲載日。年度別ページの振り分けにも使われます（4月始まり）。
+
+      - name: tags
+        label: 分類
+        type: string
+        description: 受賞 / 報告 / 特許 / 留学 / 記事掲載 / 論文 のいずれか。複数なら読点で区切ってください。
+
+      - name: thumbnail
+        label: 一覧用の画像
+        type: image
+        description: 省略すると既定の画像が使われます。
+
+      - name: body
+        label: 本文
+        type: rich-text
+        required: true

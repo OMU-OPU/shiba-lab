@@ -77,7 +77,14 @@ def replace_row(doc, items_html):
     return doc[:m.end()] + '\n' + items_html + '\n            ' + doc[i:]
 
 arts = [a for a in (article_meta(p) for p in glob.glob('info/news/entry-*.html')) if a]
-arts.sort(key=lambda a: (a['sort'], int(a['id'])), reverse=True)
+def _id_order(a):
+    # 元サイト由来の記事は数字のIDだが、入力画面から作った記事は
+    # 20260827-test のような文字列になる。同じ日付内の並びを決めるためだけの
+    # 値なので、先頭の数字を取り、無ければ0として扱う。
+    m = re.match(r'^(\d+)', a['id'])
+    return int(m.group(1)) if m else 0
+
+arts.sort(key=lambda a: (a['sort'], _id_order(a)), reverse=True)
 print(f'記事 {len(arts)} 件を読み込み（{arts[0]["date"]} 〜 {arts[-1]["date"]}）')
 
 # (ファイル, 記事へのリンク接頭辞, 画像への接頭辞, インデント)
@@ -107,8 +114,8 @@ for _t in targets:
     out = replace_row(cur, body)
     if out is None:
         print(f'  !! {path}: 一覧コンテナが見つからない'); continue
-    before = len(set(re.findall(r'entry-(\d+)\.html', cur)))
-    after  = len(set(re.findall(r'entry-(\d+)\.html', out)))
+    before = len(set(re.findall(r'entry-([A-Za-z0-9_-]+)\.html', cur)))
+    after  = len(set(re.findall(r'entry-([A-Za-z0-9_-]+)\.html', out)))
     tag = f'  [{nendo}年度]' if nendo is not None else ''
     print(f'  {path}: 掲載 {before} → {after} 件{tag}')
     if APPLY:
