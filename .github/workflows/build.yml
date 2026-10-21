@@ -15,6 +15,7 @@ on:
       - 'build.py'
       - 'build_news.py'
       - 'build_post.py'
+      - 'build_sitemap.py'
   workflow_dispatch:        # 手動でも実行できるようにしておく
 
 permissions:
@@ -42,6 +43,9 @@ jobs:
 
       - name: お知らせ一覧を作り直す
         run: python build_news.py --apply
+
+      - name: 検索エンジン向けのサイトマップを作り直す
+        run: python build_sitemap.py --apply
 
       - name: 変更があれば記録して反映
         run: |

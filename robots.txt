@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /shiba-lab/hts-cache/
+Disallow: /shiba-lab/hts-log.txt
+Disallow: /shiba-lab/_frame/
+Disallow: /shiba-lab/www.facebook.com/
+
+Sitemap: https://omu-opu.github.io/shiba-lab/sitemap.xml
